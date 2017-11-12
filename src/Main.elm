@@ -1,6 +1,5 @@
 module Main exposing (main)
 
-import Html.App as App
 import Html exposing (..)
 import Html.Events exposing (..)
 import WebSocket
@@ -51,9 +50,9 @@ subscriptions model =
     WebSocket.listen wsUrl Receive
 
 
-main : Program Never
+main : Program Never Model Msg
 main =
-    App.program
+    Html.program
         { init = init
         , update = update
         , view = view
